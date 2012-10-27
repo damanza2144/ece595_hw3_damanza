@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-
   <title>Jewelry</title>
-  
-  <!--<%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>-->
-  
-  <%= stylesheet_link_tag :all %>
+  <%= stylesheet_link_tag "scaffold" %>
+  <%= stylesheet_link_tag "/stylesheets/depot", :media => "all" %>
   <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tags %>
-  
+  <%= csrf_meta_tag %>
 </head>
-
-<body>
-
-<%= yield %>
-
+<body id="store">
+	<div id="banner">
+		<%= image_tag("/images/logo.png") %>
+		<%= @page_title || "Jewelry Store" %>
+	</div>
+	<div id="columns">
+		<div id="side">
+			<a href="/">Home</a><br />
+			<a href="/faq">Questions</a><br />
+			<a href="/news">News</a><br />
+			<a href="/contact">Contact</a><br />
+		</div>
+		<div id="main">
+			<%= yield %>
+		</div>
+	</div>
 </body>
 </html>
