@@ -27,8 +27,8 @@ class CartsController < ApplicationController
 	
 		respond_to do |format|
 		  format.html # show.html.erb
-		  #format.json { render json: @cart }
-		  format.xml { render :xml => @cart }
+		  format.json { render json: @cart }
+		  #format.xml { render :xml => @cart }
 		end
 	end
   end
@@ -86,12 +86,11 @@ class CartsController < ApplicationController
   def destroy
 	
 	@cart = current_cart
-	#@cart = Cart.find(params[:id])
     @cart.destroy
 	session[:cart_id] = nil
 
     respond_to do |format|
-      format.html { redirect_to( store_url, :notice => 'Your cart is currently empty' ) }
+      format.html { redirect_to(store_url) }
       format.json { head :no_content }
     end
   end
