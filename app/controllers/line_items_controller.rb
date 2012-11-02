@@ -8,7 +8,7 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      #format.json { render json: @line_items }
+      format.json { render json: @line_items }
     end
   end
 
@@ -20,7 +20,7 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      #format.json { render json: @line_item }
+      format.json { render json: @line_item }
     end
   end
 
@@ -55,12 +55,12 @@ class LineItemsController < ApplicationController
       if @line_item.save
         format.html { redirect_to(store_url) }
 		format.js { @current_item = @line_item }
-		#format.json { render :json => @line_item, :status => created, :location => @line_item }
-		format.xml { render :xml => @line_item, :status => :created, :location => @line_item }
+		format.json { render :json => @line_item, :status => created, :location => @line_item }
+		#format.xml { render :xml => @line_item, :status => :created, :location => @line_item }
       else
         format.html { render :action => "new" }
-        #format.json { render :json => @line_item.errors, :status => unprocessable_entity }
-		format.xml { render :xml => @line_item.errors, :status => :unprocessable_entity }
+        format.json { render json: @line_item.errors, status: :unprocessable_entity }
+		#format.xml { render :xml => @line_item.errors, :status => :unprocessable_entity }
       end
     end
   end
