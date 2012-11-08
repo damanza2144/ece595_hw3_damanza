@@ -1,5 +1,10 @@
 /* Global styles */
 
+.table_header {
+
+	font-weight:  bold;
+}
+
 #store #notice {
         color: #000;
         border: 2px solid red;
@@ -16,51 +21,52 @@
         border-bottom: 3px dotted #77d;
 }
 
-/* Styles for products/index */
+/* Styles for products/index and orders/index */
 
-#product_list table {
+.listing table {
         border-collapse: collapse;
+		width: 100%;
 }
 
-#product_list table tr td {
+.listing table tr td {
         padding: 5px;
         vertical-align: top;
 }
 
-#product_list .list_image {
+.listing .list_image {
   width:        60px;
   height:       70px;
 }
 
-#product_list .list_description {
+.listing .list_description {
   width:        60%;
 }
 
-#product_list .list_description dl {
+.listing .list_description dl {
         margin: 0;
 }
 
-#product_list .list_description dt {
+.listing .list_description dt {
 	color:        #244;
 	font-weight:  bold;
 	font-size:    larger;
 }
 
-#product_list .list_description dd {
+.listing .list_description dd {
         margin: 0;
 }
 
-#product_list .list_actions {
+.listing .list_actions {
   font-size:    x-small;
   text-align:   right;
   padding-left: 1em;
 }
 
-#product_list .list_line_even {
+.listing .list_line_even {
   background:   #e0f8f8;
 }
 
-#product_list .list_line_odd {
+.listing .list_line_odd {
   background:   #f8b0f8;
 }
 
@@ -131,7 +137,7 @@
 /* Styles for main page */
 
 #banner {
-        background: #9c9;
+        background: #9FFF9F;
         padding-top: 10px;
         padding-bottom: 10px;
         border-bottom: 2px solid;
@@ -214,3 +220,4 @@
 .depot_form div {
 	margin: 0.5em 0;
 }
+

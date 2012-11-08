@@ -2,7 +2,8 @@ class CartsController < ApplicationController
   # GET /carts
   # GET /carts.json
   def index
-    @carts = Cart.all
+    
+	@carts = Cart.paginate :page => params[:page], :order => 'id asc', :per_page => 10
 
     respond_to do |format|
       format.html # index.html.erb

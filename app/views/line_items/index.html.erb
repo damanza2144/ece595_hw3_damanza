@@ -1,25 +1,24 @@
-<h1>Listing line_items</h1>
-
-<table>
-  <tr>
-    <th>Product</th>
-    <th>Cart</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @line_items.each do |line_item| %>
-  <tr>
-    <td><%= line_item.product_id %></td>
-    <td><%= line_item.cart_id %></td>
-    <td><%= link_to 'Show', line_item %></td>
-    <td><%= link_to 'Edit', edit_line_item_path(line_item) %></td>
-    <td><%= link_to 'Destroy', line_item, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
+<div class="listing">
+	<h1>Listing Line Items</h1>
+	<table>
+		<tr class="table_header">
+			<td>Product ID</td>
+			<td>Cart ID</td>
+			<td></td>
+		</tr>
+	 <% @line_items.each do |line_item| %>
+		<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+			<td><%= line_item.product_id %></td>
+			<td><%= line_item.cart_id %></td>
+			<td class="list_actions">
+				<%= link_to 'Show', line_item %><br />
+				<%= link_to 'Edit', edit_line_item_path(line_item) %><br />
+				<%= link_to 'Destroy', line_item, confirm: 'Are you sure?', method: :delete %>
+			</td>
+		</tr>
+	 <% end %>
+	</table>
+</div>
 <br />
-
 <%= link_to 'New Line item', new_line_item_path %>
+<p><%= will_paginate @line_items %></p>
