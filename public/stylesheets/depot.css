@@ -1,5 +1,14 @@
 /* Global styles */
 
+.pagination {
+    color: #000;
+}
+
+.pagination .current {
+
+	font-weight:  bold;
+}
+
 .table_header {
 
 	font-weight:  bold;
